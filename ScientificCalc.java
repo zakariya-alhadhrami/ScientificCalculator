@@ -58,6 +58,12 @@ public class ScientificCalc {
                 case 12:
                     PerformAbsolute();
                     break;
+                case 13:
+                    PerformRound();
+                    break;
+                case 14:
+                    PerformCeiling();
+                    break;
 
 
 
@@ -387,6 +393,44 @@ public class ScientificCalc {
                 }
             }
             System.out.println("Result is: " + Absolute(num1));
+
+        }
+        private static void PerformRound(){
+            boolean check = false;
+            double num1 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter a Number: ");
+                    num1 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + Round(num1));
+
+        }
+        private static void PerformCeiling(){
+            boolean check = false;
+            double num1 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter a Number: ");
+                    num1 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + Ceiling(num1));
 
         }
 
