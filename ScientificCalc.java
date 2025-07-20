@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 public class ScientificCalc {
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in)
         displayMenu();
         
     }
@@ -66,6 +67,20 @@ public class ScientificCalc {
     }
     public static double findMax(double num1,double num2){
         return Math.max(num1,num2);
+    }
+
+    private static void PerformAdd(){
+        try{
+            Scanner input = new Scanner(System.in);
+            System.out.println("Enter first Number: ");
+            double num1 = input.nextDouble();
+            System.out.println("Enter second Number: ");
+            double num2 = input.nextDouble();
+            System.out.println("Result is: "+Addition(num1,num2));
+        }
+        catch (InputMismatchException e){
+            System.out.println("Error: Invalid input.");
+        }
     }
 
 
