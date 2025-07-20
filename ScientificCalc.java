@@ -34,6 +34,9 @@ public class ScientificCalc {
                 case 4:
                     PerformDivision();
                     break;
+                case 5:
+                    PerformPower();
+                    break;
 
             }
 
@@ -42,8 +45,11 @@ public class ScientificCalc {
     }
 
     public static void displayMenu() {
-        String[] Menu = {"Menu (ignore this)", "Addition (+)", "Subtraction (-)", "Multiplication(*)", "Division (/)", "Power (x^y)", "Sine (sin(x))", "Cosine\n" +
-                "(cos(x))", "Tangent(tan(x))", "Natural Logarithm ln x", "Logarithm Base 10 (log10 x)", "Absolute Value", "Round ( to nearest long )", "Ceiling (round up )",
+        String[] Menu = {"Menu (ignore this)", "Addition (+)",
+                "Subtraction (-)", "Multiplication(*)", "Division (/)",
+                "Power (x^y)","Square Root (√x)" ,"Sine (sin(x))", "Cosine (cos(x))",
+                "Tangent(tan(x))", "Natural Logarithm ln x", "Logarithm Base 10 (log10 x)",
+                "Absolute Value", "Round ( to nearest long )", "Ceiling (round up )",
                 "Floor ( round down )", "Minimum of two numbers", "Maximum of two numbers", "Exit"
         };
 
@@ -197,6 +203,28 @@ public class ScientificCalc {
                 }
             }
 
+
+        }
+        private static void PerformPower(){
+            boolean check = false;
+            double num1 = 0;
+            double num2 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter first Number: ");
+                    num1 = input.nextDouble();
+                    System.out.print("Enter second Number: ");
+                    num2 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + Power(num1, num2));
 
         }
 
