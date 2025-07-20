@@ -37,6 +37,14 @@ public class ScientificCalc {
                 case 5:
                     PerformPower();
                     break;
+                case 6:
+                    PerformSquareRoot();
+                    break;
+
+
+
+
+
 
             }
 
@@ -53,7 +61,7 @@ public class ScientificCalc {
                 "Floor ( round down )", "Minimum of two numbers", "Maximum of two numbers", "Exit"
         };
 
-        for (int i = 0; i < 18; i++) {
+        for (int i = 0; i < 19; i++) {
             System.out.println(i + "." + " " + Menu[i]);
         }
 
@@ -106,6 +114,9 @@ public class ScientificCalc {
     public static double findMax(double num1,double num2){
         return Math.max(num1,num2);
     }
+        public static double sqaureRoot(double num1){
+            return Math.sqrt(num1);
+        }
 
     private static void PerformAdd() {
         boolean check = false;
@@ -225,6 +236,25 @@ public class ScientificCalc {
                 }
             }
             System.out.println("Result is: " + Power(num1, num2));
+
+        }
+        private static void PerformSquareRoot(){
+            boolean check = false;
+            double num1 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter first Number: ");
+                    num1 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + sqaureRoot(num1));
 
         }
 
