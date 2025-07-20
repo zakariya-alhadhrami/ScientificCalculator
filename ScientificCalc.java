@@ -5,7 +5,26 @@ public class ScientificCalc {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in)
-        displayMenu();
+        int choice = -2;
+
+        while(true){
+            displayMenu();
+            System.out.print("Enter your choice ( enter 0 or 17 to Exit) : ");
+            try{
+
+                choice = input.nextInt();
+            }
+            catch (InputMismatchException e){
+                System.out.println("ahhhm there was an Invalid input, please reEnter a number: ");
+                input.next();
+                continue;
+            }
+
+
+            switch (choice) {
+                case 1:
+                    PerformAdd();
+                    break;
         
     }
 
