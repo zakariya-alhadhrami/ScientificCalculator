@@ -69,18 +69,27 @@ public class ScientificCalc {
         return Math.max(num1,num2);
     }
 
-    private static void PerformAdd(){
-        try{
-            Scanner input = new Scanner(System.in);
-            System.out.println("Enter first Number: ");
-            double num1 = input.nextDouble();
-            System.out.println("Enter second Number: ");
-            double num2 = input.nextDouble();
-            System.out.println("Result is: "+Addition(num1,num2));
+    private static void PerformAdd() {
+        boolean check = false;
+        double num1 = 0;
+        double num2 = 0;
+        Scanner input = new Scanner(System.in);
+        while (!check) {
+            try {
+
+                System.out.print("Enter first Number: ");
+                num1 = input.nextDouble();
+                System.out.print("Enter second Number: ");
+                num2 = input.nextDouble();
+                check = true;
+
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Invalid input.");
+                input.nextLine();
+            }
         }
-        catch (InputMismatchException e){
-            System.out.println("Error: Invalid input.");
-        }
+        System.out.println("Result is: " + Addition(num1, num2));
+
     }
 
 
