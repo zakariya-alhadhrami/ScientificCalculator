@@ -40,6 +40,12 @@ public class ScientificCalc {
                 case 6:
                     PerformSquareRoot();
                     break;
+                case 7:
+                    PerformSine();
+                    break;
+                case 8:
+                    PerformCosine();
+                    break;
 
 
 
@@ -255,6 +261,44 @@ public class ScientificCalc {
                 }
             }
             System.out.println("Result is: " + sqaureRoot(num1));
+
+        }
+        private static void PerformSine(){
+            boolean check = false;
+            double num1 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter degree number: ");
+                    num1 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + Sine(num1));
+
+        }
+        private static void PerformCosine(){
+            boolean check = false;
+            double num1 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter degree Number: ");
+                    num1 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + Cosine(num1));
 
         }
 
