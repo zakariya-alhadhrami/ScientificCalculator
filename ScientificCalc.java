@@ -31,6 +31,17 @@ public class ScientificCalc {
     public static double Division(double num1,double num2){
         return num1/num2;
     }
+    public static double Power(double num1, double num2){
+        return Math.pow(num1, num2);
+    }
+    public static double Sine(double num1){
+        return Math.sin(num1);
+    }
+    public static double Cosine(double num1){
+        return Math.cos(num1);
+    }
+    public static double Tangent(double num1){
+        return Math.tan(num1);
 
 
 
