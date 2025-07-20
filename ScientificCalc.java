@@ -52,6 +52,21 @@ public class ScientificCalc {
     public static double Absolute(double num1){
         return Math.abs(num1);
     }
+    public static double Round(double num1){
+        return Math.round(num1);
+    }
+    public static double Ceiling(double num1){
+        return Math.ceil(num1);
+    }
+    public static double Floor(double num1){
+        return Math.floor(num1);
+    }
+    public static double findMin(double num1,double num2){
+        return Math.min(num1,num2);
+    }
+    public static double findMax(double num1,double num2){
+        return Math.max(num1,num2);
+    }
 
 
 
