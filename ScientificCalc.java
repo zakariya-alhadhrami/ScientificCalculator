@@ -25,6 +25,19 @@ public class ScientificCalc {
                 case 1:
                     PerformAdd();
                     break;
+                case 2:
+                    PerformSub();
+                    break;
+                case 3:
+                    PerformMultiplication();
+                    break;
+                case 4:
+                    PerformDivision();
+                    break;
+
+            }
+
+
         
     }
 
@@ -110,6 +123,83 @@ public class ScientificCalc {
         System.out.println("Result is: " + Addition(num1, num2));
 
     }
+        private static void PerformSub(){
+            boolean check = false;
+            double num1 = 0;
+            double num2 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter first Number: ");
+                    num1 = input.nextDouble();
+                    System.out.print("Enter second Number: ");
+                    num2 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + Subtraction(num1, num2));
+
+        }
+
+        private static void PerformMultiplication(){
+            boolean check = false;
+            double num1 = 0;
+            double num2 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter first Number: ");
+                    num1 = input.nextDouble();
+                    System.out.print("Enter second Number: ");
+                    num2 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + Multiplication(num1, num2));
+
+        }
+
+        private static void PerformDivision(){
+            boolean check = false;
+            double num1 = 0;
+            double num2 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter first Number: ");
+                    num1 = input.nextDouble();
+                    System.out.print("Enter second Number: ");
+                    num2 = input.nextDouble();
+
+                    if (num2 == 0){
+                        System.out.println("Error: the second number cannot be 0.");
+                    }
+                    else{
+                        System.out.println("Result is: " + Division(num1, num2));
+                        check = true;
+                    }
+
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+
+
+        }
+
 
 
 
