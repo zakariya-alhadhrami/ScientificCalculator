@@ -41,7 +41,18 @@ public class ScientificCalc {
         return Math.cos(num1);
     }
     public static double Tangent(double num1){
-        return Math.tan(num1);
+        return Math.tan(num1);}
+
+    public static double NaturalLog(double num1){
+        return Math.log(num1);
+    }
+    public static double Logbase(double num1){
+        return Math.log10(num1);
+    }
+    public static double Absolute(double num1){
+        return Math.abs(num1);
+    }
+
 
 
 
