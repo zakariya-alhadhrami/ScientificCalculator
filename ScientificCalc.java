@@ -4,10 +4,10 @@ import java.util.InputMismatchException;
 public class ScientificCalc {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in)
-        int choice = -2;
+        Scanner input = new Scanner(System.in);
+        boolean run = true;
 
-        while(true){
+        while(run){
             displayMenu();
             System.out.print("Enter your choice ( enter 0 or 17 to Exit) : ");
             try{
@@ -64,6 +64,23 @@ public class ScientificCalc {
                 case 14:
                     PerformCeiling();
                     break;
+                case 15:
+                    PerformFloor();
+                    break;
+                case 16:
+                    PerformFindMin();
+                    break;
+                case 17:
+                    PerformFindMax();
+                    break;
+                case 0:
+                case 18:
+                    System.out.println("bye bye....");
+                    run = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Try again.");
 
 
 
@@ -138,7 +155,7 @@ public class ScientificCalc {
     public static double findMax(double num1,double num2){
         return Math.max(num1,num2);
     }
-        public static double sqaureRoot(double num1){
+        public static double squareRoot(double num1){
             return Math.sqrt(num1);
         }
 
@@ -278,7 +295,7 @@ public class ScientificCalc {
                     input.nextLine();
                 }
             }
-            System.out.println("Result is: " + sqaureRoot(num1));
+            System.out.println("Result is: " + squareRoot(num1));
 
         }
         private static void PerformSine(){
@@ -297,7 +314,7 @@ public class ScientificCalc {
                     input.nextLine();
                 }
             }
-            System.out.println("Result is: " + Sine(num1));
+            System.out.println("Result is: " + Sine(Math.toRadians(num1)));
 
         }
         private static void PerformCosine(){
@@ -316,7 +333,7 @@ public class ScientificCalc {
                     input.nextLine();
                 }
             }
-            System.out.println("Result is: " + Cosine(num1));
+            System.out.println("Result is: " + Cosine(Math.toRadians(num1)));
 
         }
         private static void PerformTangent(){
@@ -335,7 +352,7 @@ public class ScientificCalc {
                     input.nextLine();
                 }
             }
-            System.out.println("Result is: " + Tangent(num1));
+            System.out.println("Result is: " + Tangent(Math.toRadians(num1)));
 
         }
         private static void PerformNaturalLog(){
@@ -431,6 +448,69 @@ public class ScientificCalc {
                 }
             }
             System.out.println("Result is: " + Ceiling(num1));
+
+        }
+        private static void PerformFloor(){
+            boolean check = false;
+            double num1 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter a Number: ");
+                    num1 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + Floor(num1));
+
+        }
+        private static void PerformFindMin(){
+            boolean check = false;
+            double num1 = 0;
+            double num2 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter first Number: ");
+                    num1 = input.nextDouble();
+                    System.out.print("Enter second Number: ");
+                    num2 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + findMin(num1, num2));
+
+        }
+        private static void PerformFindMax(){
+            boolean check = false;
+            double num1 = 0;
+            double num2 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter first Number: ");
+                    num1 = input.nextDouble();
+                    System.out.print("Enter second Number: ");
+                    num2 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + findMax(num1, num2));
 
         }
 
