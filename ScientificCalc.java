@@ -52,6 +52,12 @@ public class ScientificCalc {
                 case 10:
                     PerformNaturalLog();
                     break;
+                case 11:
+                    PerformLogBase();
+                    break;
+                case 12:
+                    PerformAbsolute();
+                    break;
 
 
 
@@ -343,6 +349,44 @@ public class ScientificCalc {
                 }
             }
             System.out.println("Result is: " + NaturalLog(num1));
+
+        }
+        private static void PerformLogBase(){
+            boolean check = false;
+            double num1 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter a Number: ");
+                    num1 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + Logbase(num1));
+
+        }
+        private static void PerformAbsolute(){
+            boolean check = false;
+            double num1 = 0;
+            Scanner input = new Scanner(System.in);
+            while (!check) {
+                try {
+
+                    System.out.print("Enter a Number: ");
+                    num1 = input.nextDouble();
+                    check = true;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Invalid input.");
+                    input.nextLine();
+                }
+            }
+            System.out.println("Result is: " + Absolute(num1));
 
         }
 
